@@ -16,12 +16,46 @@
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.input-field{
+  height: 40px;
+  position: relative;
+  width: 100%;
+}
+
+.input-field input, input:focus{
+  height: 100%;
+  width: 100%;
+  font-size:20px;
+  outline: none;
+  padding-left: 0.8rem;
+}
+
+.input-field input:not(:placeholder-shown) ~ label{
+  font-size: 15px;
+  bottom: 2.29rem;    
+}
+
+.input-field input:placeholder-shown ~ label{
+  font-size: 20px;
+  bottom: 0rem;
+}
+
+.input-field label{
+  width: 100%;
+  position: absolute;
+  left:0.3rem;
+  color: grey;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+.input-field input:placeholder-shown:focus ~ label{
+  transform: translateY(-2.3rem);
+  font-size: 15px;
+}
+
+.border-class{
+  position: absolute;
+  width: 50%;
+  top:32vh;
 }
